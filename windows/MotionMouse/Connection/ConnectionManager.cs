@@ -389,8 +389,8 @@ public sealed class ConnectionManager : IDisposable
             case IncomingPacket.Ping ping:
                 var pong = PacketBuilder.BuildPong(ping.SendTimestampMs);
                 await transport.SendAsync(pong);
-                var nowMs    = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-                var latencyMs = (nowMs - ping.SendTimestampMs) / 2;
+                var nowMs     = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+                var latencyMs = Math.Abs((nowMs - ping.SendTimestampMs) / 2);
                 RaiseOnUiThread(() => LatencyUpdated?.Invoke(latencyMs));
                 break;
 
