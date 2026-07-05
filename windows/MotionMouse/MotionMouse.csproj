@@ -14,9 +14,9 @@
     <Product>Motion Mouse</Product>
     <AssemblyTitle>Motion Mouse</AssemblyTitle>
     <Description>Turn your Android phone into a wireless PC mouse using physical motion.</Description>
-    <Company>NExind</Company>
-    <Authors>NExind</Authors>
-    <Copyright>Copyright © 2025 NExind</Copyright>
+    <Company>Palugula Tharun kumar</Company>
+    <Authors>Palugula Tharun kumar</Authors>
+    <Copyright>Copyright © 2025 Palugula Tharun kumar</Copyright>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
