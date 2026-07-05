@@ -10,7 +10,7 @@ Motion Mouse v1.0 is the stable release checkpoint. It includes the fully optimi
 
 ## Download
 
-[Download Motion Mouse v1.0 (Windows & Android) on the Releases Page](#)
+[Download Motion Mouse v1.0 (Windows & Android) on the Releases Page](https://github.com/NExind/MotionMouse/releases/latest)
 
 For normal users, the pre-compiled `.exe` installer and Android `.apk` are the recommended install methods.
 
