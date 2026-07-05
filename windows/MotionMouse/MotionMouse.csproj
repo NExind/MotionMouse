@@ -9,6 +9,14 @@
     <RootNamespace>MotionMouse</RootNamespace>
     <Version>1.0.0</Version>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <InformationalVersion>1.0.0</InformationalVersion>
+    <Product>Motion Mouse</Product>
+    <AssemblyTitle>Motion Mouse</AssemblyTitle>
+    <Description>Turn your Android phone into a wireless PC mouse using physical motion.</Description>
+    <Company>NExind</Company>
+    <Authors>NExind</Authors>
+    <Copyright>Copyright © 2025 NExind</Copyright>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
