@@ -1,0 +1,320 @@
+<Window
+    x:Class="MotionMouse.UI.SettingsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Style="{StaticResource MotionMouseWindow}"
+    Title="Motion Mouse — Settings"
+    Width="400"
+    Height="580"
+    WindowStartupLocation="CenterScreen"
+    ResizeMode="NoResize">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Window.Resources>
+
+    <Grid Background="{StaticResource Surface0Brush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>  <!-- Title bar -->
+            <RowDefinition Height="*"/>     <!-- Scrollable content -->
+            <RowDefinition Height="Auto"/>  <!-- Bottom bar -->
+        </Grid.RowDefinitions>
+
+        <!-- TITLE BAR -->
+        <Grid
+            Grid.Row="0"
+            Background="{StaticResource Surface0Brush}"
+            MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+
+            <StackPanel
+                Orientation="Horizontal"
+                Margin="20,16,0,16">
+                <TextBlock
+                    Text="Settings"
+                    FontSize="15"
+                    FontWeight="SemiBold"
+                    Foreground="{StaticResource TextPrimaryBrush}"/>
+            </StackPanel>
+        </Grid>
+
+        <Rectangle
+            Grid.Row="0"
+            Height="1"
+            VerticalAlignment="Bottom"
+            Fill="{StaticResource Surface2Brush}"/>
+
+        <!-- SCROLLABLE SETTINGS CONTENT -->
+        <ScrollViewer
+            Grid.Row="1"
+            VerticalScrollBarVisibility="Auto"
+            HorizontalScrollBarVisibility="Disabled"
+            Padding="16,8,16,8">
+
+            <StackPanel>
+
+                <!-- MOTION CARD -->
+                <Border Style="{StaticResource Card}" Margin="0,8,0,0">
+                    <StackPanel>
+                        <TextBlock
+                            Text="MOTION"
+                            Style="{StaticResource SectionHeader}"/>
+
+                        <!-- Horizontal Sensitivity -->
+                        <Grid Margin="0,0,0,4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Column="0"
+                                Text="Horizontal Sensitivity"
+                                Foreground="{StaticResource TextPrimaryBrush}"
+                                FontWeight="Medium"
+                                VerticalAlignment="Center"/>
+                            <TextBlock
+                                Grid.Column="1"
+                                Text="{Binding SensitivityXDisplay}"
+                                Foreground="{StaticResource MotionBlueBrush}"
+                                FontWeight="Medium"
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                        <Slider
+                            Minimum="0.01" Maximum="3.0"
+                            Value="{Binding SensitivityX, Mode=TwoWay}"
+                            TickFrequency="0.01"
+                            IsSnapToTickEnabled="False"
+                            Margin="0,0,0,4"/>
+                        <TextBlock
+                            Text="Left/Right cursor speed"
+                            Style="{StaticResource SecondaryText}"
+                            Margin="0,0,0,16"/>
+
+                        <!-- Vertical Sensitivity -->
+                        <Grid Margin="0,0,0,4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Column="0"
+                                Text="Vertical Sensitivity"
+                                Foreground="{StaticResource TextPrimaryBrush}"
+                                FontWeight="Medium"
+                                VerticalAlignment="Center"/>
+                            <TextBlock
+                                Grid.Column="1"
+                                Text="{Binding SensitivityYDisplay}"
+                                Foreground="{StaticResource MotionBlueBrush}"
+                                FontWeight="Medium"
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                        <Slider
+                            Minimum="0.01" Maximum="3.0"
+                            Value="{Binding SensitivityY, Mode=TwoWay}"
+                            TickFrequency="0.01"
+                            IsSnapToTickEnabled="False"
+                            Margin="0,0,0,4"/>
+                        <TextBlock
+                            Text="Up/Down cursor speed"
+                            Style="{StaticResource SecondaryText}"
+                            Margin="0,0,0,16"/>
+
+                        <!-- Smoothing -->
+                        <Grid Margin="0,0,0,4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Column="0"
+                                Text="Smoothing"
+                                Foreground="{StaticResource TextPrimaryBrush}"
+                                FontWeight="Medium"
+                                VerticalAlignment="Center"/>
+                            <TextBlock
+                                Grid.Column="1"
+                                Text="{Binding SmoothingDisplay}"
+                                Foreground="{StaticResource MotionBlueBrush}"
+                                FontWeight="Medium"
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                        <Slider
+                            Minimum="0.0" Maximum="0.95"
+                            Value="{Binding Smoothing, Mode=TwoWay}"
+                            Margin="0,0,0,4"/>
+                        <TextBlock
+                            Text="Reduces jitter. Higher = smoother but adds slight lag"
+                            Style="{StaticResource SecondaryText}"
+                            Margin="0,0,0,16"/>
+
+                        <!-- Dead Zone -->
+                        <Grid Margin="0,0,0,4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Column="0"
+                                Text="Dead Zone"
+                                Foreground="{StaticResource TextPrimaryBrush}"
+                                FontWeight="Medium"
+                                VerticalAlignment="Center"/>
+                            <TextBlock
+                                Grid.Column="1"
+                                Text="{Binding DeadZoneDisplay}"
+                                Foreground="{StaticResource MotionBlueBrush}"
+                                FontWeight="Medium"
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                        <Slider
+                            Minimum="0.005" Maximum="0.1"
+                            Value="{Binding DeadZone, Mode=TwoWay}"
+                            Margin="0,0,0,4"/>
+                        <TextBlock
+                            Text="Filters micro-movements when phone is stationary"
+                            Style="{StaticResource SecondaryText}"
+                            Margin="0,0,0,0"/>
+
+                    </StackPanel>
+                </Border>
+
+                <!-- SYNC TO PHONE CARD
+                     Push settings to the connected Android device -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <TextBlock
+                            Text="SYNC"
+                            Style="{StaticResource SectionHeader}"/>
+
+                        <TextBlock
+                            Text="Push current settings to the connected phone. The phone will use these values immediately."
+                            Style="{StaticResource SecondaryText}"
+                            TextWrapping="Wrap"
+                            Margin="0,0,0,12"/>
+
+                        <Button
+                            Style="{StaticResource PrimaryButton}"
+                            Content="Sync to Phone"
+                            HorizontalAlignment="Stretch"
+                            Command="{Binding SyncToPhoneCommand}"
+                            IsEnabled="{Binding CanSync}"/>
+
+                        <!-- Sync feedback -->
+                        <TextBlock
+                            Text="{Binding SyncStatusText}"
+                            Style="{StaticResource SecondaryText}"
+                            HorizontalAlignment="Center"
+                            Margin="0,8,0,0"
+                            Visibility="{Binding HasSyncStatus,
+                                Converter={StaticResource BoolToVis}}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- BEHAVIOUR CARD -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <TextBlock
+                            Text="BEHAVIOUR"
+                            Style="{StaticResource SectionHeader}"/>
+
+                        <CheckBox
+                            Content="Start with Windows"
+                            IsChecked="{Binding StartWithWindows, Mode=TwoWay}"
+                            Margin="0,0,0,12"/>
+
+                        <CheckBox
+                            Content="Minimise to tray on close"
+                            IsChecked="{Binding MinimiseToTray, Mode=TwoWay}"
+                            Margin="0,0,0,12"/>
+
+                        <CheckBox
+                            Content="Show connection notifications"
+                            IsChecked="{Binding ShowConnectionToasts, Mode=TwoWay}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- RESET CARD -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <TextBlock
+                            Text="RESET"
+                            Style="{StaticResource SectionHeader}"/>
+
+                        <TextBlock
+                            Text="Restore all settings to factory defaults."
+                            Style="{StaticResource SecondaryText}"
+                            Margin="0,0,0,12"/>
+
+                        <Button
+                            Style="{StaticResource GhostButton}"
+                            Content="Reset to Defaults"
+                            HorizontalAlignment="Stretch"
+                            Command="{Binding ResetToDefaultsCommand}"
+                            Foreground="{StaticResource ErrorBrush}"
+                            BorderBrush="{StaticResource ErrorBrush}"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- ABOUT CARD -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <TextBlock
+                            Text="ABOUT"
+                            Style="{StaticResource SectionHeader}"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Column="0"
+                                Text="Motion Mouse"
+                                Foreground="{StaticResource TextPrimaryBrush}"
+                                FontWeight="Medium"/>
+                            <TextBlock
+                                Grid.Column="1"
+                                Text="v1.0.0"
+                                Style="{StaticResource SecondaryText}"/>
+                        </Grid>
+
+                        <TextBlock
+                            Text="Protocol version 2"
+                            Style="{StaticResource SecondaryText}"
+                            Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Rectangle Height="16" Fill="Transparent"/>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- BOTTOM BAR — Close button -->
+        <Border
+            Grid.Row="2"
+            Background="{StaticResource Surface0Brush}"
+            Padding="16,12">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Rectangle
+                    Grid.Row="0"
+                    Fill="{StaticResource Surface2Brush}"/>
+                <Button
+                    Grid.Row="1"
+                    Margin="0,12,0,0"
+                    Style="{StaticResource GhostButton}"
+                    Content="Close"
+                    HorizontalAlignment="Stretch"
+                    Click="CloseButton_Click"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

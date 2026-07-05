@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Motion Mouse</string>
+    <string name="notification_channel_name">Motion Mouse Service</string>
+    <string name="notification_channel_description">Keeps Motion Mouse running while connected</string>
+    <string name="notification_title">Motion Mouse Active</string>
+    <string name="notification_text_connected">Connected to %1$s</string>
+    <string name="notification_text_searching">Searching for PC…</string>
+</resources>

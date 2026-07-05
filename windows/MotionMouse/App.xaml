@@ -1,0 +1,29 @@
+<Application
+    x:Class="MotionMouse.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    ShutdownMode="OnExplicitShutdown">
+    <!--
+        ShutdownMode="OnExplicitShutdown" is critical for a tray application.
+
+        The default ShutdownMode is OnLastWindowClose — the application
+        exits when the last window is closed. For a tray app, the user
+        closes the main window but expects the app to keep running.
+
+        OnExplicitShutdown means the app only exits when we call
+        Application.Current.Shutdown() explicitly — which we do
+        only from the tray icon's Exit menu item.
+
+        Without this, closing the main window would kill the connection.
+    -->
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="UI/Styles/Colors.xaml"/>
+                <ResourceDictionary Source="UI/Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

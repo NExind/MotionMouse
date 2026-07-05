@@ -1,0 +1,42 @@
+# =========================
+# Windows (.NET / C# / Inno Setup)
+# =========================
+windows/**/bin/
+windows/**/obj/
+windows/.vs/
+windows/Output/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.exe
+
+# =========================
+# Android (Gradle)
+# =========================
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/**/*.iml
+*.apk
+*.aab
+
+# =========================
+# IDEs & Editor Files
+# =========================
+.vscode/
+.idea/
+*.swp
+
+# =========================
+# macOS / System Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log

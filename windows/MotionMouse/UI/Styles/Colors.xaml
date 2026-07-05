@@ -1,0 +1,49 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+        Motion Mouse Windows colour palette.
+        Mirrors the Android colour system exactly for visual consistency.
+        Users who look at both the phone app and PC window should see
+        the same design language.
+    -->
+
+    <!-- Brand -->
+    <Color x:Key="MotionBlueColor">#FF2979FF</Color>
+    <Color x:Key="MotionBlueDimColor">#FF1565C0</Color>
+    <Color x:Key="MotionBlueLightColor">#FF82B1FF</Color>
+
+    <!-- Surfaces -->
+    <Color x:Key="Surface0Color">#FF0A0A0F</Color>
+    <Color x:Key="Surface1Color">#FF13131A</Color>
+    <Color x:Key="Surface2Color">#FF1C1C26</Color>
+    <Color x:Key="Surface3Color">#FF252533</Color>
+
+    <!-- Semantic -->
+    <Color x:Key="ConnectedColor">#FF00E676</Color>
+    <Color x:Key="SearchingColor">#FFFFAB00</Color>
+    <Color x:Key="DisconnectedColor">#FF546E7A</Color>
+    <Color x:Key="ErrorColor">#FFFF5252</Color>
+
+    <!-- Text -->
+    <Color x:Key="TextPrimaryColor">#FFF5F5F7</Color>
+    <Color x:Key="TextSecondaryColor">#FF8E8EA0</Color>
+    <Color x:Key="TextTertiaryColor">#FF4A4A60</Color>
+
+    <!-- Brushes — used in XAML bindings -->
+    <SolidColorBrush x:Key="MotionBlueBrush"      Color="{StaticResource MotionBlueColor}"/>
+    <SolidColorBrush x:Key="MotionBlueDimBrush"   Color="{StaticResource MotionBlueDimColor}"/>
+    <SolidColorBrush x:Key="Surface0Brush"        Color="{StaticResource Surface0Color}"/>
+    <SolidColorBrush x:Key="Surface1Brush"        Color="{StaticResource Surface1Color}"/>
+    <SolidColorBrush x:Key="Surface2Brush"        Color="{StaticResource Surface2Color}"/>
+    <SolidColorBrush x:Key="Surface3Brush"        Color="{StaticResource Surface3Color}"/>
+    <SolidColorBrush x:Key="ConnectedBrush"       Color="{StaticResource ConnectedColor}"/>
+    <SolidColorBrush x:Key="SearchingBrush"       Color="{StaticResource SearchingColor}"/>
+    <SolidColorBrush x:Key="DisconnectedBrush"    Color="{StaticResource DisconnectedColor}"/>
+    <SolidColorBrush x:Key="ErrorBrush"           Color="{StaticResource ErrorColor}"/>
+    <SolidColorBrush x:Key="TextPrimaryBrush"     Color="{StaticResource TextPrimaryColor}"/>
+    <SolidColorBrush x:Key="TextSecondaryBrush"   Color="{StaticResource TextSecondaryColor}"/>
+    <SolidColorBrush x:Key="TextTertiaryBrush"    Color="{StaticResource TextTertiaryColor}"/>
+
+</ResourceDictionary>

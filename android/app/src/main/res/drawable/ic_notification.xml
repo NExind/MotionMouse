@@ -1,0 +1,15 @@
+<!--
+    Small notification icon — must be monochrome white/transparent.
+    Android renders notification icons in white with a colored background;
+    any color in the icon is ignored.
+    This is a simple mouse cursor shape.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M4,0 L4,17 L7,14 L9.5,19.5 L11.5,18.5 L9,13 L13,13 Z" />
+</vector>
