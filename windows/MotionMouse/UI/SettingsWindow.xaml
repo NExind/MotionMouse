@@ -258,6 +258,61 @@
                     </StackPanel>
                 </Border>
 
+                <!-- GET ANDROID APP CARD
+                     QR code linking to the GitHub releases page for the Android APK. -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <TextBlock
+                            Text="GET ANDROID APP"
+                            Style="{StaticResource SectionHeader}"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- QR Code image -->
+                            <Border
+                                Grid.Column="0"
+                                Background="{StaticResource Surface3Brush}"
+                                CornerRadius="8"
+                                Padding="6"
+                                Margin="0,0,14,0">
+                                <Image
+                                    Source="pack://application:,,,/Resources/qr_android.png"
+                                    Width="90"
+                                    Height="90"
+                                    RenderOptions.BitmapScalingMode="NearestNeighbor"
+                                    SnapsToDevicePixels="True"/>
+                            </Border>
+
+                            <!-- Text + link -->
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <TextBlock
+                                    Text="Scan to download the Android app"
+                                    Foreground="{StaticResource TextPrimaryBrush}"
+                                    FontWeight="Medium"
+                                    TextWrapping="Wrap"
+                                    Margin="0,0,0,6"/>
+                                <TextBlock
+                                    Style="{StaticResource SecondaryText}"
+                                    TextWrapping="Wrap"
+                                    Margin="0,0,0,8">
+                                    Scan with your phone's camera to get the Motion Mouse Android app.
+                                </TextBlock>
+                                <TextBlock>
+                                    <Hyperlink
+                                        NavigateUri="https://github.com/NExind/MotionMouse/releases/latest"
+                                        RequestNavigate="Hyperlink_RequestNavigate">
+                                        View Releases on GitHub
+                                    </Hyperlink>
+                                </TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
                 <!-- ABOUT CARD -->
                 <Border Style="{StaticResource Card}">
                     <StackPanel>

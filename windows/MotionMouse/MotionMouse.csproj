@@ -27,4 +27,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="Resources\qr_android.png" />
+  </ItemGroup>
+
 </Project>
